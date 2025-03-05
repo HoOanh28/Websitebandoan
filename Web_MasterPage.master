@@ -1,0 +1,357 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Web_MasterPage.master.cs" Inherits="Web_MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+
+    <title>Cơm Nhà</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="../css/font.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link href="css/grid.css" rel="stylesheet" />
+    <script src="/admin_js/sweetalert.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <link href="css/font-awesome.css" rel="stylesheet" />
+    <link href="css/hover.css" rel="stylesheet" />
+    <link href="css/jquery-ui.min.css" rel="stylesheet" />
+    <script src="js/jquery-ui.min.js"></script>
+    <link href="css/jquery.fancybox.min.css" rel="stylesheet" />
+    <script src="js/jquery.fancybox.min.js"></script>
+    <link href="css/jquery.mmenu.all.min.css" rel="stylesheet" />
+    <script src="js/jquery.mmenu.min.all.min.js"></script>
+    <script src="js/jquery.form.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        .navbar-nav {
+            font-family: 'Roboto';
+            font-weight: 650;
+            font-size: 20px;
+        }
+
+        .nav-item .btn {
+            font-family: auto;
+            font-weight: 650;
+            font-size: 20px;
+            width: 135px;
+            height: 45px;
+            right: 5px;
+            /* font-size: 18px; */
+            background: #eb983e;
+            color: #FFF;
+            /* top: 5px; */
+            -webkit-border-radius: 20px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 0% 2% 1% 34%;
+        }
+
+
+        .searchbox {
+            float: right;
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 20%;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            transition: height 0.3s ease-in-out; /* Thêm hiệu ứng chuyển động */
+            height: 0; /* Ban đầu ẩn ô tìm kiếm */
+            overflow: hidden; /* Ẩn nội dung bên trong khi ẩn */
+        }
+
+        .showsearch:hover .searchbox {
+            display: block;
+            height: 34px; /* Khi hover, hiển thị ô tìm kiếm với chiều cao mong muốn */
+        }
+
+        .form-control {
+            width: 100%; /* Giảm kích thước của ô tìm kiếm */
+            box-sizing: border-box;
+            transition: opacity 0.3s ease-in-out; /* Thêm hiệu ứng chuyển động */
+            opacity: 0; /* Ban đầu ẩn ô tìm kiếm */
+            float: right;
+        }
+
+
+
+        .showsearch:hover .form-control {
+            opacity: 1; /* Khi hover, hiển thị ô tìm kiếm */
+        }
+
+        .search-icon {
+            cursor: pointer;
+            font-size: 24px;
+            margin-left: 10px;
+        }
+
+        .search-icon,
+        .cart-icon {
+            margin-right: 10px; /* Thêm margin để tạo khoảng cách giữa icon tìm kiếm và icon giỏ hàng */
+            display: flex;
+            align-items: center; /* Canh giữa theo chiều dọc */
+        }
+
+            .search-icon i,
+            .cart-icon i {
+                font-size: 24px; /* Điều chỉnh kích thước của icon */
+                cursor: pointer;
+                color: #333; /* Đặt màu sắc của icon */
+            }
+
+        .cart-text {
+            display: none; /* Ẩn chữ "Giỏ hàng" khi không responsive */
+            margin-left: 5px; /* Khoảng cách giữa icon và chữ */
+        }
+
+        /* Thêm kiểu dáng CSS cho điểm responsive */
+        @media (max-width: 767px) {
+            .search-icon {
+                margin-right: 0; /* Đặt margin-right thành 0 để loại bỏ khoảng cách giữa biểu tượng và ô tìm kiếm */
+            }
+
+            .cart-text {
+                display: inline-block; /* Hiển thị chữ "Giỏ hàng" khi responsive */
+            }
+
+            .search-icon a i {
+                display: none; /* Ẩn icon tìm kiếm khi responsive */
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="smScriptManager" runat="server"></asp:ScriptManager>
+        <div id="page">
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background: beige;">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="trang-chu">
+                        <img style="margin-left: 42%; max-width: 89%;" src="images/logo/logo.png" />
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                            <!-- Các mục menu ở đây -->
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="trang-chu" href="trang-chu">Trang Chủ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="gioi-thieu">Giới Thiệu</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" style="color: black" role="button" data-bs-toggle="dropdown" aria-expanded="false">Thực đơn
+                                </a>
+                                <ul class="dropdown-menu" style="background: beige;" aria-labelledby="navbarDarkDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="menu">Tất cả</a></li>
+                                    <asp:Repeater runat="server" ID="rpMenu">
+                                        <ItemTemplate>
+                                            <li><a class="dropdown-item" href="nhom-<%#Eval("link") %>"><%#Eval("cate_name") %></a></li>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="blog">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="dat-ban">Đặt bàn</a>
+                            </li>
+                        </ul>
+                        <div style="display: flex; justify-items: center">
+                            <div class="cart-icon">
+                                <asp:LinkButton ID="btnLogout" runat="server" OnClick="btnLogout_Click">
+                                        <i class="bi bi-box-arrow-right"></i>
+                                </asp:LinkButton>
+                            </div>
+
+
+                            <div class="user-icon" style="margin-right: 20px">
+                                <a href="login"><i class="bi bi-people-fill"></i></a>
+                            </div>
+                            <div class="cart-icon">
+                                <a href="gio-hang">
+                                    <i class="fa fa-shopping-cart"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder4" runat="server">
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder5" runat="server">
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder6" runat="server">
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder7" runat="server">
+            </asp:ContentPlaceHolder>
+
+
+            <div class="box-ht-cuahang ">
+                <div class="grid">
+                    <div class="flex-container flex-center" style="">
+
+                        <div class="cell-list-map mobile-cell-1-1 tab-cell-1-1" style="background: #FFF">
+                            <div class="title-list-map">
+                                <div class="flex-container">
+                                    <div class="title-map-text">Hệ thống nhà hàng</div>
+
+                                </div>
+                            </div>
+                            <div class="box-list-map">
+                                <asp:Repeater runat="server" ID="rpHeThong">
+                                    <ItemTemplate>
+                                        <div class="item-map" data-id="16">
+                                            <div class="name"><%#Eval("re_name") %></div>
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="5">
+                                                <tbody>
+                                                    <tr>
+                                                        <td width="15px"><i class="fa fa-map-marker" aria-hidden="true"></i></td>
+                                                        <td><%#Eval("re_address") %></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><i class="fa fa-phone" aria-hidden="true"></i></td>
+                                                        <td>Hotline: <%#Eval("phone") %></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><i class="fa fa-envelope" aria-hidden="true"></i></td>
+                                                        <td><%#Eval("email") %></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer" style="width: 100%; overflow: hidden">
+                <div class="c30"></div>
+                <div class="grid">
+                    <div class="flex-container  flex-space-between">
+
+                        <div class="cell-2-5 mobile-cell-1-1 tab-cell-1-1 pad-cell-1-1 margin-bottom-20">
+                            <div class="flex-container">
+                                <div class="cell-1-2 mobile-cell-1-1">
+                                    <img src="../images/logo/logo.png" />
+                                </div>
+                                <div class="cell-1-2 mobile-cell-1-1">
+                                    <div class="title-footer">Thông tin liên hệ</div>
+                                    <div class="c20"></div>
+                                    <div>
+                                        <table border="0" cellpadding="5" cellspacing="0" class="table-list" style="border-collapse: collapse">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <img src="images/icon/icon-location.png" style="height: 15px; width: 11px" />
+
+                                                    <td>Tầng 4 số 34 - 36 Th&aacute;i H&agrave;, H&agrave; Nội</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <i class="bi bi-telephone"></i>
+                                                        <td>Điện thoại: 0968 296433<br />
+                                                            Hotline: 19009077</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <i class="bi bi-envelope"></i>
+                                                        <td>Email: nhahangnethue@gmail.com</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <i class="bi bi-globe"></i>
+                                                        <td>Website: nethue.com.vn</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cell-3-5 mobile-cell-1-1 tab-cell-1-1 pad-cell-1-1">
+                            <div class="flex-container">
+                                <div class="cell-1-3 mobile-cell-1-1 tab-cell-1-1 margin-bottom-20">
+                                    <div class="cell-1-1 tab-cell-1-2 mobile-cell-1-1 margin-bottom-20" style="padding-left: 10px;">
+                                        <div class="title-footer"><a href="tin-tuc-noi-bat/index.html">Tin tức nổi bật</a></div>
+                                        <div class="c10"></div>
+                                        <ul class="menufooter ">
+                                        </ul>
+                                        <div class="title-footer"><a href="co-the-ban-quan-tam/index.html">Có thể bạn quan tâm</a></div>
+                                        <div class="c10"></div>
+                                        <ul class="menufooter ">
+                                            <li><a href="chinh-sach-giao-hang/index.html">Chính sách giao hàng</a></li>
+                                            <li><a href="nhom-dong-dat-tiec/index.html">Nhóm đông đặt tiệc</a></li>
+                                            <li><a href="dat-mon-phuc-vu-tai-nha/index.html">Đặt món phục vụ tại nhà</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                                <div class="cell-2-3 mobile-cell-1-1 tab-cell-1-1 ">
+                                    <div class="flex-container flex-space-between">
+                                        <div class="cell-3-5 mobile-cell-1-1 margin-bottom-20">
+                                            <iframe src="https://www.facebook.com/plugins/page.php?href=https://www.facebook.com/nhahangnethue/&amp;tabs&amp;width=340&amp;height=214&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true&amp;appId=1584582048427439" width="100%" height="214" style="border: none; overflow: hidden" scrolling="no" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                                        </div>
+                                        <div class="cell-2-5 mobile-cell-1-1 margin-bottom-20">
+                                            <div class="title-footer">Mạng xã hội</div>
+                                            <div class="c20"></div>
+                                            <div class="linksmo">
+                                                <a href="https://www.facebook.com/nhahangnethue/">
+                                                    <img src="images/logo/facebook.png" /></a>
+                                                <a href="#">
+                                                    <img src="images/logo/twitter.png" /></a>
+                                                <a href="#">
+                                                    <img src="images/logo/youtube.png" /></a>
+                                                <a href="#">
+                                                    <img src="images/logo/zalo.png" /></a>
+                                            </div>
+                                            <div class="c10"></div>
+
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="c30"></div>
+            </div>
+
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder8" runat="server">
+            </asp:ContentPlaceHolder>
+            <div class="overlay"></div>
+        </div>
+    </form>
+</body>
+</html>

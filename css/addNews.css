@@ -1,0 +1,340 @@
+﻿.language {
+    float: right;
+}
+
+    .language a {
+        display: inline-block;
+        color: #fff;
+    }
+
+        .language a img {
+            height: 15px;
+        }
+
+.fade.in {
+    opacity: 1;
+}
+
+.enroll .form-group label {
+    margin-bottom: 0;
+}
+
+.enroll .form-group {
+    margin-bottom: 10px;
+}
+
+.overlay.logo-box:before {
+    background: #ffe81a;
+    opacity: 0.9;
+}
+
+.btn-view-360 {
+    background-color: #fff;
+    margin: 25px 5px 5px 0;
+    font-size: 15px;
+    font-weight: 700;
+    border-color: #fff;
+    color: #ffe81a;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+    .btn-view-360:hover {
+        border-color: #fff;
+        color: #fff;
+        background-color: #ffe81a;
+    }
+.btn-primary.disabled, .btn-primary:disabled {
+    background-color: #ff0007;
+    border-color: #ff0007;
+}
+.index2-content {
+}
+
+    .index2-content .title {
+    }
+
+    .index2-content .sumary {
+    }
+/*===============================
+	Block logo CSS 
+=================================*/
+#logo .feature-head {
+    text-align: center;
+}
+
+#logo .single-feature {
+    display: block;
+    font-weight: 400;
+}
+
+    #logo .single-feature img {
+        width: auto;
+        height: 250px;
+    }
+
+    #logo .single-feature h2 {
+        text-align: center;
+        min-height: 48px;
+        color: #252525;
+    }
+
+    #logo .single-feature p {
+        text-align: justify;
+    }
+/*===============================
+	Block box-why CSS 
+=================================*/
+#box-why .single-feature h2 {
+    text-align: center;
+    color: #252525;
+    font-size: 16px;
+}
+
+#box-why .feature-icon {
+    text-align: center;
+    margin: 30px auto;
+}
+
+    #box-why .feature-icon i {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        -moz-border-radius: 50%;
+        font-size: 3em;
+        background-color: #ffe81a;
+        color: #fff;
+        text-align: center;
+        line-height: 90px;
+        display: inline-block;
+    }
+
+#box-why .single-feature p {
+    text-align: justify;
+    font-size: 13px;
+    line-height: 1.5;
+}
+/*===============================
+	Block footer CSS 
+=================================*/
+.box-cs {
+    min-height: 80px;
+}
+
+    .box-cs .cs-ico {
+        margin-right: 15px;
+        margin-bottom: 15px;
+    }
+
+.cs-ico {
+    float: left;
+    position: relative;
+    margin-top: 3px;
+    padding: 20px;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    height: 30px;
+    width: 30px;
+    line-height: 12px;
+    border: 2px solid transparent;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -ms-box-sizing: content-box;
+    box-sizing: content-box;
+    -moz-background-size: 100% 100%;
+    background-size: 100% 100%;
+    background-position: center center;
+    -moz-transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+    border-color: #73C6B6;
+}
+
+    .cs-ico i {
+        font-size: 30px;
+        width: auto;
+        background-image: none;
+        color: #73C6B6;
+        line-height: 28px;
+        height: 30px;
+        padding: 0;
+        display: block;
+    }
+
+    .cs-ico:hover {
+        background-color: #73C6B6;
+    }
+
+        .cs-ico:hover i {
+            color: #fff;
+        }
+
+.box-cs .irs-footer-heading {
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    color: #fff;
+    position: relative;
+}
+
+    .box-cs .irs-footer-heading:before {
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        content: "";
+        width: 50px;
+        height: 2px;
+        background: #ffe81a;
+    }
+
+
+
+.box-cs p, .box-cs a {
+    color: #ffffff;
+    /*line-height: 1.5;
+    font-size: 11px;*/
+}
+
+.game-one {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+    .game-one .d-flex {
+        align-items: center;
+        margin: 5px auto;
+    }
+
+        .game-one .d-flex label {
+            margin-bottom: 0;
+        }
+
+.form-input {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+    .form-input.d-inline {
+        display: inline-block;
+        width: auto;
+    }
+
+.btn-click {
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.btn-themes1 {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+
+    .btn-themes1:hover {
+        color: #fff;
+        background-color: #286090;
+        border-color: #204d74;
+    }
+
+
+
+.table-game table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 15px auto;
+}
+
+    .table-game table tr td {
+        padding: 7px;
+    }
+
+    .table-game table tr.r-border td {
+        padding: 15px 7px 7px;
+    }
+
+.table-game .input-number {
+    margin: auto;
+}
+
+.r-border {
+    border-top: 4px solid #ccc;
+}
+
+.input-number {
+    display: block;
+    width: 50px;
+    height: 30px;
+    /* padding: 6px 12px; */
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+
+
+@media (min-width: 768px) {
+    .game-one {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+}
+
+@media (min-width: 992px) {
+    .table-game {
+        display: -ms-flexbox;
+        display: flex;
+        vertical-align: central;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 1200px) {
+    .box-cs {
+        width: 50%;
+        float: left;
+    }
+}

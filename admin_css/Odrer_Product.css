@@ -1,0 +1,295 @@
+﻿body {
+}
+
+.menu-head {
+    height: 45px;
+    background-color: #0094ff;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.the-input {
+    width: 80%;
+}
+
+.menu {
+    padding: 5px;
+    text-align: center;
+    float: left;
+}
+
+    .menu:hover {
+        color: white;
+    }
+
+.taikhoan {
+    float: left;
+}
+
+.helo {
+    float: left;
+}
+
+.head-combobox {
+    float: right;
+}
+
+.helo button {
+    color: #000000;
+    background-color: white;
+    border: 1px solid #ccc;
+}
+
+.danhmucsanpham {
+    padding-top: 10px;
+}
+
+.table {
+    margin-top: 20px;
+}
+
+.tab-menu nutcongtru button {
+    float: left;
+}
+
+.nutcongtru {
+    float: right;
+}
+
+.nutcong {
+    float: left;
+}
+
+.nuttru {
+    float: left;
+}
+
+.tab-gtbl {
+    overflow: auto;
+    height: 280px
+}
+
+.combobox {
+    float: left;
+    width: 40%;
+}
+
+.btn-hangmoi {
+    float: left;
+    padding-left: 10px;
+}
+
+.btn-primary {
+    width: 100%;
+}
+
+.nut-thanhtoan {
+    padding-bottom: 20px;
+}
+
+.the-input2 {
+    float: left;
+    width: 100%;
+}
+
+.nut-button {
+}
+
+.thanhtoan-hoadon {
+    /* padding-top: 8.55px; */
+}
+
+.button-huy-luu-in {
+    float: right;
+}
+
+.nut-button-huy-luu-in {
+    padding-left: 5px;
+    float: left;
+}
+
+    .nut-button-huy-luu-in btn-default {
+        width: 100%;
+    }
+
+.texttienhang1 {
+    font-size: 19px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: black;
+}
+
+.texttienhang2 {
+    font-size: 16px;
+    float: right;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    color: black;
+}
+
+.textgiamgia1 {
+    font-size: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.textgiamgia2 {
+    font-size: 16px;
+    float: right;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.textthanhtoan1 {
+    font-weight: 700;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #f0ad4e;
+}
+
+.textthanhtoan2 {
+    float: right;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #f0ad4e;
+}
+
+.textkhachtra1 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 16px;
+}
+
+.input-thanhtoan2 {
+    font-size: 16px;
+    float: right;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.texttiendu1 {
+    font-size: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.texttiendu2 {
+    font-size: 16px;
+    float: right;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.nutthanhtoanchung {
+    margin-top: 40px;
+}
+
+.nut-button3 {
+    padding-top: 10px;
+}
+
+.button-lochang-lietkehang {
+    padding-bottom: 20px;
+}
+
+.sanphamlietke-sanpham {
+    padding-top: 30px;
+    height: 517px;
+    overflow: auto;
+}
+
+.hinh-textsanpham {
+}
+
+.hinh-sanpham {
+    height: 152px;
+    border: 1px solid #ececec;
+    text-align: center;
+    width: auto;
+}
+
+    .hinh-sanpham img {
+        width: 50%;
+    }
+
+.text-sanpham {
+    text-align: center;
+}
+
+.text-sanpham1 {
+    font-weight: 600;
+    font-size: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.text-sanpham2 {
+    display: inline-block;
+    padding-bottom: 5px;
+    font-weight: 700;
+}
+
+.text-sanpham3 {
+    font-weight: 700;
+    display: inline-block;
+    padding-bottom: 5px;
+    text-decoration: line-through;
+}
+
+.text-sanpham4 {
+    font-weight: 600;
+    font-size: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #f4574c;
+}
+
+.button-trang {
+    clear: both;
+    text-align: center;
+}
+
+.button-trang1 {
+    display: inline-block;
+}
+
+.taggioithieu-binhluan {
+    height: 300px;
+}
+
+.img-sp {
+    max-width: 100%;
+    max-height: 150px;
+}
+
+.text-sanpham-chung23 {
+    padding-top: 3px;
+    display: inline-block;
+}
+/*popup*/
+
+.tenkhachhang {
+    text-align: right;
+    font-size: 15px;
+}
+
+.text-tenkhachhang {
+    font-size: 18px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.the-input {
+    padding-bottom: 10px;
+}
+
+.nut-button2 {
+    font-size: 25px;
+    margin-top: 10px;
+    text-align: right;
+}
+/**/
+
+
