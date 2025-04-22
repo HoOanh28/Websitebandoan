@@ -796,3 +796,6 @@
     .xemthem:hover .button-block .button-text {
         transform: translate(45px, 0px)
     }
+.nav-item {
+    margin: 0 15px; /* tăng khoảng cách trái phải giữa các mục */
+}

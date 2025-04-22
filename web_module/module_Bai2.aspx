@@ -10,7 +10,7 @@
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder5" runat="Server">
     <div class="crumb">
-        <div class="grid"><a href="/">Trang chủ</a> <i class="fa fa-angle-right"></i><a href="/blog-am-thuc/">Blog ẩm thực </a></div>
+        <div class="grid"><a href="/">Trang chủ</a> <i class="fa fa-angle-right"></i><a href="/blog">Blog ẩm thực </a></div>
     </div>
 
     <div class="grid">
@@ -20,9 +20,9 @@
             <h1 class="news-detail-name">Nét Huế Khai Xuân Phục Vụ Tại Chỗ Cả Hệ Thống </h1>
 
             <div class="content-text">
-                Nét Huế Khai Xuân Phục Vụ Tại Chỗ Cả Hệ Thống.<br>
+               
                 <br>
-                Nhà Hàng Nét Huế xin thông báo cả hệ thống Nét Huế đã khai xuân mở hàng và phục vụ tại chỗ từ ngày 5/2/2022<br>
+                Nhà Hàng Nét Huế xin thông báo cả hệ thống Nét Huế đã khai xuân mở hàng và phục vụ tại chỗ từ ngày 5/2/2025<br>
                 Nét Huế xin kính chúc quý khách hàng 1 năm mới tràn đầy sức khỏe, bình an và hạnh phúc.<br>
                 <br>
                 Nhà hàng vẫn đang tiếp tục áp dụng ưu đãi tặng món mới và tặng Chè Huế tới quý khách hàng. Chương trình như 1 món quà<br>

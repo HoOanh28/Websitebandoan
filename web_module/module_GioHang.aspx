@@ -12,7 +12,7 @@
     <div class="crumb">
         <div class="grid"><a href="/">Trang chủ</a>  <i class="fa fa-angle-right"></i><a href="gio-hang">Giỏ Hàng </a></div>
     </div>
-    <div claa="bg-cart">
+    <div class="bg-cart">
         <div class="grid">
             <div class="grid" style="width: 100%;">
 
@@ -52,21 +52,90 @@
                             <th colspan="4"><%=total %></th>
                         </tr>
                     </table>
-                    <div <%=none %>>
-                        <a href="javascript:void(0)" id="btnSave"  class="btn btn-primary" runat="server" onserverclick="btnSave_ServerClick">Đặt hàng</a>
-                    </div>
-                    <br />
+                    
                     <br />
                     <br />
                 </center>
             </div>
+            <form action="/index4.php?page=cart&amp;lang=" method="post" id="contactform" onsubmit="return check_contact();">
+                <input type="hidden" name="code" value="save">
+                <div class="step-02">
+                    <div class="cart-title-number">02</div>
+                    <div class="cart-title">
+                        <div class="fl cart-title-name">Xác nhận đặt món </div>
+                        <div class="c"></div>
+                    </div>
+                    <div class="c20"></div>
+                    <em>Những trường có dấu * là trường bắt buộc phải nhập thông tin </em>
+                    <div class="c10"></div>
+                    <div style="max-width: 900px;">
+                        <div class="flex-container flex-space-between">
+                            <div class="cell-1-3 mobile-cell-1-1">
+                                <div class="contact_input">
+                                    <input name="yourname" type="text" class="txt-cart notNull" id="yourname" placeholder="Họ tên*">
+                                </div>
+                            </div>
+                            <div class="cell-1-3 mobile-cell-1-1">
+                                <div class="contact_input">
+                                    <input name="phone" type="text" class="txt-cart notNull" placeholder="Điện thoại*">
+                                </div>
+                            </div>
+                            <div class="cell-1-3 mobile-cell-1-1">
+                                <div class="contact_input">
+                                    <input name="email" type="text" class="txt-cart" id="email" placeholder="Email *">
+                                </div>
+                            </div>
+                            <div class="cell-2-3 mobile-cell-1-1">
+                                <div class="contact_input">
+                                    <input name="address" type="text" class="txt-cart notNull" placeholder="Địa chỉ*">
+                                </div>
+                            </div>
+                            <div class="cell-1-3 mobile-cell-1-1">
+                                <div class="contact_input">
+                                    <select name="nhahang">
+                                        <option value="">- Chọn nhà hàng -</option>
+                                        <option value="Nét Huế - Aeon Xuân Thủy -Cầu Giấy">Nét Huế Sơn Trà</option>
+                                        <option value="Net Hue Vincom Mega Mall Smart City">Nét Huế Hoà Khánh</option>
+                                        <option value="Net Hue Savico Megamall">Nét Huế Hải Châu</option>
+                                       
+                                    </select>
+                                </div>
+                            </div>
+                            <%--<div class="contact_input">
+                                <textarea name="other_request" rows="5" placeholder="Thời gian nhận hàng (yêu cầu khác,...)" style="height: 60px;" class="txt-cart"></textarea>
+                            </div>--%>
+  
+                            <div class="c10"></div>
+
+                            <div class="c10"></div>
+                            <div class="c5"></div>
+                           
+
+                        </div>
+                        <div class="flex-container">
+                            <div class="cell-1-2">
+                                <input name="input" type="button" onclick="javascript:history.back();" class="btn-send-continue" value="Tiếp tục đặt món"></div>
+                            <div class="cell-1-2" style="text-align: right">
+                                <div <%=none %>>
+                        <a href="javascript:void(0)" id="btnSave" class="btn btn-primary" runat="server" onserverclick="btnSave_ServerClick">Đặt hàng</a>
+                    </div>
+                    <br />
+                        </div>
+                    </div>
+                    <div class="c10"></div>
+                    <div class="c10"></div>
+                    <div class="msgbox">
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
     <div style="display: none">
         <input type="text" id="txtId" runat="server" name="name" value="" />
-        <a href="javascript:void(0)" id="btnAdd" runat="server" onserverclick="btnAdd_ServerClick"></a>
-        <a href="javascript:void(0)" id="btnGiam" runat="server" onserverclick="btnGiam_ServerClick"></a>
-        <a href="javascript:void(0)" id="btnDel" runat="server" onserverclick="btnDel_ServerClick"></a>
+
+        <asp:LinkButton ID="btnAdd" runat="server" OnClick="btnAdd_ServerClick" CssClass="hidden"></asp:LinkButton>
+        <asp:LinkButton ID="btnGiam" runat="server" OnClick="btnGiam_ServerClick" CssClass="hidden"></asp:LinkButton>
+        <asp:LinkButton ID="btnDel" runat="server" OnClick="btnDel_ServerClick" CssClass="hidden"></asp:LinkButton>
     </div>
     <script>
         function _add(id) {

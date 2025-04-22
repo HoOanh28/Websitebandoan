@@ -2,7 +2,7 @@
 
 html, body {
     font-family: Muli-R, Arial, sans-serif;
-    font-size: 14px;
+    font-size: 17px;
     padding: 0px;
     margin: 0px;
     color: #414042; /*
@@ -374,6 +374,7 @@ img {
 
     .news-name-home a {
         color: #414042;
+        text-decoration: none;
     }
 
 .createdate-home {
@@ -557,17 +558,18 @@ img {
 
 .product-name-home {
     font-family: Roboto-B, Tahoma, Geneva, sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     color: #414042;
     font-weight: normal;
 }
 
     .product-name-home a {
         color: #414042;
+        text-decoration: none;
     }
 
 .btn-order-c {
-    background: #FFF;
+    background: #e9e6e6;
     color: #d5a34c;
     font-family: Muli-B, Tahoma, Geneva, sans-serif;
     font-size: 13px;
@@ -753,10 +755,7 @@ img {
     color: #414042;
 }
 
-    .menu-name a {
-        color: #414042;
-    }
-
+    
 .crumb {
     background: #FFF;
     padding: 10px 0px;
@@ -1014,7 +1013,7 @@ img {
 
 .intro-detail {
     font-family: Roboto-B, Tahoma, Geneva, sans-serif;
-    font-size: 16px;
+    font-size: 22px;
     font-weight: normal;
 }
 
@@ -1065,6 +1064,7 @@ img {
 
     .trust-name a {
         color: #d5a34c;
+        text-decoration:none;
     }
 
 .page-about {
@@ -1084,6 +1084,7 @@ img {
 
     .title-footer a {
         color: #d5a34c;
+        text-decoration:none;
     }
 
 .menufooter {

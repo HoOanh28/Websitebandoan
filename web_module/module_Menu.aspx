@@ -1,6 +1,28 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Web_MasterPage.master" AutoEventWireup="true" CodeFile="module_Menu.aspx.cs" Inherits="web_module_module_Menu" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <style>
+        .product-out-of-stock {
+            opacity: 0.5;
+            filter: grayscale(50%);
+            pointer-events: none;
+            position: relative;
+        }
+        
+        .product-out-of-stock::after {
+            content: "Hết hàng";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            z-index: 1;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="Server">
 </asp:Content>
@@ -10,7 +32,7 @@
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder5" runat="Server">
     <div class="crumb">
-        <div class="grid"><a href="/">Trang chủ</a> <i class="fa fa-angle-right"></i><a href="/thuc-don/">Thực đơn</a></div>
+        <div class="grid"><a href="/">Trang chủ</a> <i class="fa fa-angle-right"></i><a href="/Menu">Thực đơn</a></div>
     </div>
     <div class="page-menu">
         <div class="grid">
@@ -24,15 +46,15 @@
                     <div style="text-align: center">
                         Hãy cũng khám phá thực đơn tại nhà hàng Nét Huế để được thưởng thức trọn hương vị ẩm thực<br>
                         <br>
-                        <span style="color: #d5a34c"><span style="font-size: 18px">
-                            <strong>Huế Tinh hoa ẩm thực Huế</strong></span></span>
+                        <span style="color: #d5a34c"><span style="font-size: 24px">
+                            <strong>Tinh hoa ẩm thực Huế</strong></span></span>
                     </div>
                 </div>
                 <div class="c20"></div>
                 <div class="flex-container ">
                   <asp:Repeater runat="server" ID="rpMon">
                     <ItemTemplate>
-                        <div class="cell-1-4 mobile-cell-1-2 tab-cell-1-3 b-pro margin-bottom-40">
+                        <div class="cell-1-4 mobile-cell-1-2 tab-cell-1-3 b-pro margin-bottom-40 <%# Eval("pr_status").ToString() == "Hết" ? "product-out-of-stock" : "" %>">
                             <div>
                                 <a href="mon-<%#Eval("link") %>">
                                     <img src="<%#Eval("pr_image") %>" alt="<%#Eval("pr_name") %>" width="100%"></a>

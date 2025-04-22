@@ -10,7 +10,7 @@
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder5" runat="Server">
     <div class="crumb">
-        <div class="grid"><a href="/">Trang chủ</a> <i class="fa fa-angle-right"></i><a href="/blog-am-thuc/">Blog ẩm thực </a></div>
+        <div class="grid"><a href="/">Trang chủ</a> <i class="fa fa-angle-right"></i><a href="#">Blog ẩm thực </a></div>
     </div>
     <div style="background: #FFF">
         <div class="grid">
@@ -32,7 +32,7 @@
                             <img src="../images/banner/phuhopkhauvi.jpg" alt="Phong Phú Khẩu Vị Riêng Của Người Huế " class="image-news" width="100%"></a>
                     </div>
                     <h3 class="news-name"><a href="phong-phu-khau-vi">Phong Phú Khẩu Vị Riêng Của Người Huế </a></h3>
-                    <div>Nét Văn Hóa Ẩm Thực Của Người Huế</div>
+                    <div>&nbsp</div>
                 </div>
                 <div class="cell-1-3 margin-bottom-20 tab-cell-1-2 mobile-cell-1-1">
                     <div>
@@ -45,9 +45,9 @@
                 <div class="cell-1-3 margin-bottom-20 tab-cell-1-2 mobile-cell-1-1">
                     <div>
                         <a href="thong-bao">
-                            <img src="../images/Tet-2023/phuc-vu-thong-tet.jpg" alt="Nét Huế Bán Thông Tết 2022" class="image-news" width="100%"></a>
+                            <img src="../images/ban-thong-tet.png" alt="Nét Huế Bán Thông Tết 2025" class="image-news" width="100%"></a>
                     </div>
-                    <h3 class="news-name"><a href="thong-bao">Nét Huế Bán Thông Tết 2022</a></h3>
+                    <h3 class="news-name"><a href="thong-bao">Nét Huế Bán Thông Tết 2025</a></h3>
                     <div>&nbsp;</div>
                 </div>
             </div>

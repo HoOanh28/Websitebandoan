@@ -17,20 +17,20 @@
             <div class="flex-container flex-center" style="">
 
                 <div class="cell-list-map mobile-cell-1-1 tab-cell-1-1" style="background: #FFF">
-                    <div class="title-list-map">
-                        <div class="flex-container">
-                            <div class="title-map-text">Hệ thống nhà hàng</div>
+                    <div class="title-list-map">   <div class="title-map-text">Hệ thống nhà hàng</div>
                           
+                        <div class="flex-container">
+                         
                         </div>
                     </div>
                     <div class="box-list-map">
                         <div class="item-map active" data-id="16">
-                            <div class="name">Nét Huế Hàng Bông</div>
+                            <div class="name">Nét Huế Hoà Khánh</div>
                             <table width="100%" border="0" cellspacing="0" cellpadding="5">
                                 <tbody>
                                     <tr>
                                         <td width="15px"><i class="fa fa-map-marker" aria-hidden="true"></i></td>
-                                        <td>Nét Huế 198 Hàng Bông, Q. Hoàn Kiếm, Hà Nội</td>
+                                        <td>Nét Huế 459 Tôn Đức Thắng, Đà Nẵng</td>
                                     </tr>
                                     <tr>
                                         <td><i class="fa fa-phone" aria-hidden="true"></i></td>
@@ -45,12 +45,12 @@
 
                         </div>
                         <div class="item-map" data-id="25">
-                            <div class="name">Nét Huế Lạc Trung</div>
+                            <div class="name">Nét Huế Sơn Trà</div>
                             <table width="100%" border="0" cellspacing="0" cellpadding="5">
                                 <tbody>
                                     <tr>
                                         <td width="15px"><i class="fa fa-map-marker" aria-hidden="true"></i></td>
-                                        <td>Nét Huế 57 Lạc Trung - Q. Hai Bà Trưng - Hà Nội</td>
+                                        <td>Nét Huế 236 Võ Nguyên Giáp, Đà Nẵng</td>
                                     </tr>
                                     <tr>
                                         <td><i class="fa fa-phone" aria-hidden="true"></i></td>
@@ -64,7 +64,7 @@
                             </table>
                         </div>
                         <div class="item-map" data-id="26">
-                            <div class="name">Nét Huế Times city</div>
+                            <div class="name">Nét Huế Hải Châu</div>
                             <table width="100%" border="0" cellspacing="0" cellpadding="5">
                                 <tbody>
                                     <tr>

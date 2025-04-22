@@ -10,7 +10,7 @@
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder5" runat="Server">
     <div class="crumb">
-        <div class="grid"><a href="/">Trang chủ</a> <i class="fa fa-angle-right"></i><a href="/blog-am-thuc/">Blog ẩm thực </a></div>
+        <div class="grid"><a href="/">Trang chủ</a> <i class="fa fa-angle-right"></i><a href="/blog">Blog ẩm thực </a></div>
     </div>
 
     <div class="grid">
@@ -36,7 +36,7 @@
                     <br>
                     Tại Nét Huế gần như mỗi món ăn lại kèm theo 1 loại&nbsp;nước chấm khác nhau. Không ngại phức tạp, không ngại mất công,&nbsp;chúng tôi luôn&nbsp;cố gắng mang đầy đủ nhất khẩu vị của của ẩm thực Huế đến với thực khách Hà Thành. Mỗi món ăn mang một hồn riêng, khẩu vị riêng bởi chính sự khác biệt của gia giảm đi kèm. Nó không chỉ là ẩm thực, là kinh nghiệm tích lũy trong khẩu vị ăn uống của người Huế trải qua hàng trăm năm từ thời vua chúa đến hiện tại mà còn là nét văn hóa ẩm thực đáng trân quý là lưu giữ.&nbsp;<br>
                     <br>
-                    <img src="../images/hoa%20dao.jpg" style="width: 800px;">
+                    <img src="../images/banner/phuhopkhauvi.jpg"  style="width: 1000px;">
                 </p>
             </div>
         </div>

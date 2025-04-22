@@ -193,6 +193,14 @@
                                                 <dx:ASPxComboBox ID="ddlCate" runat="server" ValueType="System.Int32" TextField="cate_name" ValueField="cate_id" ClientInstanceName="ddlCate" CssClass="form-control" ></dx:ASPxComboBox>
                                             </div>
                                         </div>
+                                         <div class="form-group row">
+                                            <label class="col-sm-2 form-control-label text-xs-right">Tinh trang:</label>
+                                            <div class="col-sm-8">
+                                                <asp:RadioButton Text="Hết" runat="server" ID="rdHet" GroupName="tinhtrang"  />
+                                                <asp:RadioButton Text="Còn" runat="server" ID="rdCon" GroupName="tinhtrang" />
+                                                <%--<asp:TextBox ID="txtTinhTrang" runat="server" ClientIDMode="Static" CssClass="form-control boxed"> </asp:TextBox>--%>
+                                            </div>
+                                        </div>
                                     </div>
                                 <div class="col-3">
                                     <div class="col-12">

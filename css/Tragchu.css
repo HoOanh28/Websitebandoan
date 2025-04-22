@@ -1,4 +1,3 @@
-
 html, body {
 	font-family: Muli-R, Arial, sans-serif;
 	font-size: 14px;
@@ -636,6 +635,7 @@ img {
 	position:absolute;
 	top:0px;
 	left:0px;
+	
 	-webkit-border-radius:50%;
 	border-radius:50%;
 }
@@ -646,6 +646,7 @@ img {
 }
 .menu-name a{
 	color:#414042;		
+	text-decoration:none;
 }
 .crumb{
 	background:#FFF;
@@ -962,6 +963,17 @@ img {
 .menufooter li a:hover{
 	color:#d5a34c;
 }
+
+/* Styles for specific footer links that shouldn't function as links */
+.no-link-footer {
+	pointer-events: none;
+	text-decoration: none !important;
+	cursor: default;
+}
+.no-link-footer:hover {
+	color: #efebe4 !important;
+}
+
 .txt-contact{
 	width:100%;
 	height:35px;

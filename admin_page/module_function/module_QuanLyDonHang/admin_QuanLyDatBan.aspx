@@ -53,8 +53,8 @@
             return true;
         }
         function confirmDel() {
-            swal("Bạn có thực sự muốn xóa?",
-                "Nếu xóa, dữ liệu sẽ không thể khôi phục.",
+            swal("Bạn có thực sự muốn xác nhận đơn này?",
+                "Nếu đồng ý, dữ liệu sẽ không thể khôi phục.",
                 "warning",
                 {
                     buttons: true,

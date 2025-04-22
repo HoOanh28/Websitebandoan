@@ -10,7 +10,7 @@
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder5" runat="Server">
     <div class="crumb">
-        <div class="grid"><a href="/">Trang chủ</a> <i class="fa fa-angle-right"></i><a href="/uu-dai/">Ưu đãi</a></div>
+        <div class="grid"><a href="/">Trang chủ</a> <i class="fa fa-angle-right"></i><a >Ưu đãi</a></div>
     </div>
     <div style="background: #FFF">
         <div class="grid">
@@ -21,11 +21,11 @@
             <div class="flex-container">
                 <div class="cell-1-3 margin-bottom-20 tab-cell-1-2 mobile-cell-1-1">
                     <div>
-                        <a href="/blog-am-thuc/dung-lau-tang-kem-mon-moi.html">
-                            <img src="../images/UuDai/Tangkum.jpg"
-                          alt="Dùng Lẩu Tặng Kèm Món Mới ( áp dụng từ ngày 14/12/2023)" class="image-news" width="100%"></a>
+                        <a href="../images/UuDai/khuyen_mai.png">
+                            <img src="../images/UuDai/khuyen_mai.png"
+                          alt="Khuyến mãi ( áp dụng từ ngày 20/5/2025-25/5/2025)" class="image-news" width="100%"></a>
                     </div>
-                    <h3 class="news-name"><a href="/blog-am-thuc/dung-lau-tang-kem-mon-moi.html">Dùng Lẩu Tặng Kèm Món Mới ( áp dụng từ ngày 14/12/2021)</a></h3>
+                    <h3 class="news-name">Chương trình khuyến mãi (áp dụng từ ngày 20/5/2025-25/5/2025)</h3>
                     <div></div>
                 </div>
                 <div class="cell-1-3 margin-bottom-20 tab-cell-1-2 mobile-cell-1-1">

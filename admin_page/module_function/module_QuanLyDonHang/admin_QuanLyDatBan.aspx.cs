@@ -4,7 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Web;
-using System.Web.Mail;
+//using System.Web.Mail;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -58,6 +58,10 @@ public partial class admin_page_module_function_module_QuanLySanPham_admin_QuanL
 			{
 				tb_Book del = db.tb_Books.Where(x => x.book_id == Convert.ToInt32(item)).FirstOrDefault();
 				del.book_status = "Đã duyệt";
+				//get email của người nhận
+				string email = del.book_email;
+				//gửi mail thông báo
+				SendMail(email);
 			}
 			db.SubmitChanges();
 			ScriptManager.RegisterClientScriptBlock(Page, this.GetType(), "Alert", "swal('Duyệt thành công','','success').then(function(){grvList.Refresh();})", true);
@@ -103,5 +107,46 @@ public partial class admin_page_module_function_module_QuanLySanPham_admin_QuanL
 				alert.alert_Error(Page, "Cập nhật thất bại", "");
 			}
 		}
+	}
+	private bool SendMail(string email)
+	{
+
+		if (email != "")
+		{
+			try
+			{
+				var fromAddress = "thongbaovietnhatschool@gmail.com";//  Email Address from where you send the mail 
+				var toAddress = email;
+				const string fromPassword = "neiabcekdjluofid";
+				string subject, title;
+				title = "Thông báo";
+				subject = "<!DOCTYPE html><html><head><title></title></head><body ><div>" +
+				"<h3 style=\"margin-top:0px; text-align:center; color:#000\">Chúc mừng bạn đã đặt bàn thành công! Nhà hàng đã nhận được thông tin đặt bàn của bạn và sẽ sớm liên hệ để xác nhận chi tiết. Cảm ơn bạn đã tin tưởng và lựa chọn nhà hàng.</h3>" +
+				"</div></body></html>";
+				var smtp = new System.Net.Mail.SmtpClient();
+				{
+					smtp.Host = "smtp.gmail.com";	
+					smtp.Port = 587;
+					smtp.EnableSsl = true;
+					smtp.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
+					smtp.Credentials = new NetworkCredential(fromAddress, fromPassword);
+					smtp.Timeout = 20000;
+				}
+				MailMessage mm = new MailMessage();
+				mm.From = new MailAddress(fromAddress, "Admin Nét Huế");
+				mm.Subject = title;
+				mm.To.Add(toAddress);
+				mm.IsBodyHtml = true;
+				mm.Body = subject;
+				smtp.Send(mm);
+				return true;
+			}
+			catch
+			{
+				return false;
+			}
+		}
+		else
+			return false;
 	}
 }

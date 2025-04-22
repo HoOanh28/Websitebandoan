@@ -38,18 +38,47 @@ public partial class web_module_module_GioHang : System.Web.UI.Page
 
     }
 
-
     protected void btnAdd_ServerClick(object sender, EventArgs e)
     {
-        List<cls_Cart> cart = (List<cls_Cart>)Session["Cart"];
+        //List<cls_Cart> cart = (List<cls_Cart>)Session["Cart"];
 
-        // Kiểm tra xem sản phẩm đã tồn tại trong giỏ hàng chưa
+        //// Kiểm tra xem sản phẩm đã tồn tại trong giỏ hàng chưa
+        //cls_Cart existingProduct = cart.FirstOrDefault(p => p.id == Convert.ToInt32(txtId.Value));
+
+
+        //if (existingProduct != null)
+        //{
+        //    existingProduct.number += 1;
+        //    existingProduct.total = existingProduct.number * existingProduct.price;
+        //}
+        //txtId.Value = "";
+        //Session["Cart"] = cart;
+        //Response.Redirect("/gio-hang");
+
+        //codee moi 
+        int id = int.Parse(txtId.Value);
+        var cart = Session["Cart"] as List<cls_Cart>;
+        if (cart == null)
+        {
+            cart = new List<cls_Cart>();
+        }
+
         cls_Cart existingProduct = cart.FirstOrDefault(p => p.id == Convert.ToInt32(txtId.Value));
-
         if (existingProduct != null)
         {
             existingProduct.number += 1;
-            existingProduct.total = existingProduct.number * existingProduct.price;
+            existingProduct.total = existingProduct.price * existingProduct.number;
+        }
+        else
+        {
+            cart.Add(new cls_Cart
+            {
+                ProductId = id,
+                ProductName = existingProduct.ProductName,
+                Price = existingProduct.Price,
+                Quantity = 1,
+                total = existingProduct.total,
+            });
         }
         txtId.Value = "";
         Session["Cart"] = cart;

@@ -21,4 +21,8 @@ public class cls_Cart
     public int number { get; set; }
     public int price { get; set; }
     public int total { get; set; }
+    public int ProductId { get; set; }  // Đảm bảo có ProductId
+    public string ProductName { get; set; }
+    public decimal Price { get; set; }
+    public int Quantity { get; set; }
 }

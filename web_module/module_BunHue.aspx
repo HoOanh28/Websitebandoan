@@ -10,7 +10,7 @@
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder5" runat="Server">
     <div class="crumb">
-        <div class="grid"><a href="/">Trang chủ</a> <i class="fa fa-angle-right"></i><a href="/thuc-don/">Thực đơn</a>&nbsp;<i class="fa fa-angle-right"></i>&nbsp;<a href="/bun-hue/">Bún Huế</a></div>
+        <div class="grid"><a href="/">Trang chủ</a> <i class="fa fa-angle-right"></i><a href="/Menu">Thực đơn</a>&nbsp;<i class="fa fa-angle-right"></i>&nbsp;<a href="/bun-hue/">Bún Huế</a></div>
     </div>
     <div class="grid">
         <div class="c20"></div>

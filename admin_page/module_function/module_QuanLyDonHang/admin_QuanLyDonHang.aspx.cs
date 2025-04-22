@@ -4,7 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Web;
-using System.Web.Mail;
+//using System.Web.Mail;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -76,6 +76,13 @@ public partial class admin_page_module_function_module_QuanLySanPham_admin_QuanL
             {
                 tb_Order del = db.tb_Orders.Where(x => x.order_id == Convert.ToInt32(item)).FirstOrDefault();
                 del.order_status = "Đã xong";
+                //get email của người nhận
+                var getUser = (from u in db.tb_Users
+                               where u.us_id == del.us_id
+                               select u).FirstOrDefault();
+                string email = getUser.us_email;
+                //gửi mail thông báo
+                SendMail(email);
             }
             db.SubmitChanges();
             ScriptManager.RegisterClientScriptBlock(Page, this.GetType(), "Alert", "swal('Duyệt thành công','','success').then(function(){grvList.Refresh();})", true);
@@ -121,5 +128,46 @@ public partial class admin_page_module_function_module_QuanLySanPham_admin_QuanL
                 alert.alert_Error(Page, "Cập nhật thất bại", "");
             }
         }
+    }
+    private bool SendMail(string email)
+    {
+
+        if (email != "")
+        {
+            try
+            {
+                var fromAddress = "thongbaovietnhatschool@gmail.com";//  Email Address from where you send the mail 
+                var toAddress = email;
+                const string fromPassword = "neiabcekdjluofid";
+                string subject, title;
+                title = "Thông báo";
+                subject = "<!DOCTYPE html><html><head><title></title></head><body ><div>" +
+                "<h3 style=\"margin-top:0px; text-align:center; color:#000\">Đơn hàng của bạn đã được xác nhận. Vui lòng đợi liên hệ từ nhà hàng chúng tôi</h3>" +
+                "</div></body></html>";
+                var smtp = new System.Net.Mail.SmtpClient();
+                {
+                    smtp.Host = "smtp.gmail.com";
+                    smtp.Port = 587;
+                    smtp.EnableSsl = true;
+                    smtp.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
+                    smtp.Credentials = new NetworkCredential(fromAddress, fromPassword);
+                    smtp.Timeout = 20000;
+                }
+                MailMessage mm = new MailMessage();
+                mm.From = new MailAddress(fromAddress, "Admin Cơm Niêu 3 cô gái");
+                mm.Subject = title;
+                mm.To.Add(toAddress);
+                mm.IsBodyHtml = true;
+                mm.Body = subject;
+                smtp.Send(mm);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        else
+            return false;
     }
 }

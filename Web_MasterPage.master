@@ -7,7 +7,7 @@
 
     <title>Cơm Nhà</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link href="css/style.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="../css/font.css" />
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
     <link href="css/grid.css" rel="stylesheet" />
@@ -25,7 +25,7 @@
     <script src="js/jquery.form.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -127,6 +127,25 @@
                 display: none; /* Ẩn icon tìm kiếm khi responsive */
             }
         }
+
+        .cart-1 {
+            position: relative;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: 28%;
+        }
+
+        .pading {
+            padding: 0px 20px 0px;
+        }
+        .title-footer a {
+    text-decoration: none;
+}
+        .menufooter li a {
+    text-decoration: none;
+}
     </style>
 
 </head>
@@ -145,17 +164,17 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                             <!-- Các mục menu ở đây -->
-                            <li class="nav-item">
+                            <li class="nav-item pading">
                                 <a class="nav-link active" aria-current="trang-chu" href="trang-chu">Trang Chủ</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item pading ">
                                 <a class="nav-link active" href="gioi-thieu">Giới Thiệu</a>
                             </li>
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown pading">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" style="color: black" role="button" data-bs-toggle="dropdown" aria-expanded="false">Thực đơn
                                 </a>
                                 <ul class="dropdown-menu" style="background: beige;" aria-labelledby="navbarDarkDropdownMenuLink">
-                                    <li><a class="dropdown-item" href="menu">Tất cả</a></li>
+                                    <li><a class="dropdown-item" href="Menu">Tất cả</a></li>
                                     <asp:Repeater runat="server" ID="rpMenu">
                                         <ItemTemplate>
                                             <li><a class="dropdown-item" href="nhom-<%#Eval("link") %>"><%#Eval("cate_name") %></a></li>
@@ -163,10 +182,13 @@
                                     </asp:Repeater>
                                 </ul>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item pading">
                                 <a class="nav-link active" href="blog">Blog</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item pading">
+                                <a class="nav-link active" href="uu-dai">Ưu đãi</a>
+                            </li>
+                            <li class="nav-item pading">
                                 <a class="nav-link active" href="dat-ban">Đặt bàn</a>
                             </li>
                         </ul>
@@ -181,9 +203,11 @@
                             <div class="user-icon" style="margin-right: 20px">
                                 <a href="login"><i class="bi bi-people-fill"></i></a>
                             </div>
+
                             <div class="cart-icon">
                                 <a href="gio-hang">
-                                    <i class="fa fa-shopping-cart"></i>
+                                    <i class="fa fa-shopping-cart cart-1"></i>
+                                    <span class="cart-count"><%= countCart %></span>
                                 </a>
                             </div>
                         </div>
@@ -195,7 +219,24 @@
             <br />
             <br />
             <br />
+            <script>
+                function addToCart(itemId, itemName, itemPrice) {
+                    let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+                    // Kiểm tra xem món đã có trong giỏ chưa
+                    let item = cart.find(i => i.id === itemId);
+
+                    if (item) {
+                        item.quantity++; // Tăng số lượng nếu đã có
+                    } else {
+                        cart.push({ id: itemId, name: itemName, price: itemPrice, quantity: 1 });
+                    }
+
+                    localStorage.setItem("cart", JSON.stringify(cart));
+                    updateCartUI();
+                }
+
+            </script>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
             </asp:ContentPlaceHolder>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
@@ -216,9 +257,8 @@
 
                         <div class="cell-list-map mobile-cell-1-1 tab-cell-1-1" style="background: #FFF">
                             <div class="title-list-map">
+                                <div class="title-map-text">Hệ thống nhà hàng</div>
                                 <div class="flex-container">
-                                    <div class="title-map-text">Hệ thống nhà hàng</div>
-
                                 </div>
                             </div>
                             <div class="box-list-map">
@@ -271,7 +311,7 @@
                                                     <td>
                                                         <img src="images/icon/icon-location.png" style="height: 15px; width: 11px" />
 
-                                                    <td>Tầng 4 số 34 - 36 Th&aacute;i H&agrave;, H&agrave; Nội</td>
+                                                    <td>Nét Huế 459 Tôn Đức Thắng, Đà Nẵng</td>
                                                 </tr>
                                                 <tr>
                                                     <td>
@@ -299,16 +339,16 @@
                             <div class="flex-container">
                                 <div class="cell-1-3 mobile-cell-1-1 tab-cell-1-1 margin-bottom-20">
                                     <div class="cell-1-1 tab-cell-1-2 mobile-cell-1-1 margin-bottom-20" style="padding-left: 10px;">
-                                        <div class="title-footer"><a href="tin-tuc-noi-bat/index.html">Tin tức nổi bật</a></div>
+                                        <div class="title-footer"><a href="#">Tin tức nổi bật</a></div>
                                         <div class="c10"></div>
                                         <ul class="menufooter ">
                                         </ul>
-                                        <div class="title-footer"><a href="co-the-ban-quan-tam/index.html">Có thể bạn quan tâm</a></div>
+                                        <div class="title-footer"><a href="#">Có thể bạn quan tâm</a></div>
                                         <div class="c10"></div>
                                         <ul class="menufooter ">
-                                            <li><a href="chinh-sach-giao-hang/index.html">Chính sách giao hàng</a></li>
-                                            <li><a href="nhom-dong-dat-tiec/index.html">Nhóm đông đặt tiệc</a></li>
-                                            <li><a href="dat-mon-phuc-vu-tai-nha/index.html">Đặt món phục vụ tại nhà</a></li>
+                                            <li><a href="#">Chính sách giao hàng</a></li>
+                                            <li><a href="#">Nhóm đông đặt tiệc</a></li>
+                                            <li><a href="#">Đặt món phục vụ tại nhà</a></li>
                                         </ul>
                                     </div>
 
@@ -316,13 +356,13 @@
                                 <div class="cell-2-3 mobile-cell-1-1 tab-cell-1-1 ">
                                     <div class="flex-container flex-space-between">
                                         <div class="cell-3-5 mobile-cell-1-1 margin-bottom-20">
-                                            <iframe src="https://www.facebook.com/plugins/page.php?href=https://www.facebook.com/nhahangnethue/&amp;tabs&amp;width=340&amp;height=214&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true&amp;appId=1584582048427439" width="100%" height="214" style="border: none; overflow: hidden" scrolling="no" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                                            <iframe src="https://www.facebook.com/plugins/page.php?href=https://www.facebook.com/profile.php?id=61575339632565&mibextid=ZbWKwL/&amp;tabs&amp;width=340&amp;height=214&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true&amp;appId=1584582048427439" width="100%" height="214" style="border: none; overflow: hidden" scrolling="no" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                                         </div>
                                         <div class="cell-2-5 mobile-cell-1-1 margin-bottom-20">
                                             <div class="title-footer">Mạng xã hội</div>
                                             <div class="c20"></div>
                                             <div class="linksmo">
-                                                <a href="https://www.facebook.com/nhahangnethue/">
+                                                <a href="https://www.facebook.com/profile.php?id=61575339632565&mibextid=ZbWKwL">
                                                     <img src="images/logo/facebook.png" /></a>
                                                 <a href="#">
                                                     <img src="images/logo/twitter.png" /></a>
@@ -352,6 +392,30 @@
             </asp:ContentPlaceHolder>
             <div class="overlay"></div>
         </div>
+        <!-- Add script to fix menu dropdown issue -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Fix for dropdown menu
+                var dropdownToggle = document.querySelector('#navbarDropdownMenuLink');
+                var dropdownMenu = document.querySelector('.dropdown-menu');
+
+                if (dropdownToggle) {
+                    // Create a Bootstrap dropdown instance manually
+                    var dropdown = new bootstrap.Dropdown(dropdownToggle);
+
+                    // Add click handler to ensure dropdown opens on first click
+                    dropdownToggle.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        if (dropdownMenu.classList.contains('show')) {
+                            dropdown.hide();
+                        } else {
+                            dropdown.show();
+                        }
+                    });
+                }
+            });
+        </script>
     </form>
 </body>
 </html>
+   
