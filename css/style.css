@@ -63,6 +63,10 @@ img {
 .c5 {
     height: 5px;
 }
+.product-name-home a, .title-home a, a.btn-order-c, .news-name a, .title-footer a, .menufooter li a, .grid a, .nav-link active {
+    text-decoration: none
+}
+
 
 .c10 {
     height: 10px;
