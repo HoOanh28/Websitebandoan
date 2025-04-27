@@ -110,6 +110,10 @@
       <Column Name="order_status" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="username_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="order_total" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="order_payment_method" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="order_address" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="order_phone" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="order_note" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.tb_OrderDetail" Member="tb_OrderDetails">

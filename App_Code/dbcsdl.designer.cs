@@ -2166,6 +2166,14 @@ public partial class tb_Order : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	private string _order_total;
 	
+	private string _order_payment_method;
+	
+	private string _order_address;
+	
+	private string _order_phone;
+	
+	private string _order_note;
+	
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2182,6 +2190,14 @@ public partial class tb_Order : INotifyPropertyChanging, INotifyPropertyChanged
     partial void Onusername_idChanged();
     partial void Onorder_totalChanging(string value);
     partial void Onorder_totalChanged();
+    partial void Onorder_payment_methodChanging(string value);
+    partial void Onorder_payment_methodChanged();
+    partial void Onorder_addressChanging(string value);
+    partial void Onorder_addressChanged();
+    partial void Onorder_phoneChanging(string value);
+    partial void Onorder_phoneChanged();
+    partial void Onorder_noteChanging(string value);
+    partial void Onorder_noteChanged();
     #endregion
 	
 	public tb_Order()
@@ -2305,6 +2321,86 @@ public partial class tb_Order : INotifyPropertyChanging, INotifyPropertyChanged
 				this._order_total = value;
 				this.SendPropertyChanged("order_total");
 				this.Onorder_totalChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_order_payment_method", DbType="NVarChar(100)")]
+	public string order_payment_method
+	{
+		get
+		{
+			return this._order_payment_method;
+		}
+		set
+		{
+			if ((this._order_payment_method != value))
+			{
+				this.Onorder_payment_methodChanging(value);
+				this.SendPropertyChanging();
+				this._order_payment_method = value;
+				this.SendPropertyChanged("order_payment_method");
+				this.Onorder_payment_methodChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_order_address", DbType="NVarChar(200)")]
+	public string order_address
+	{
+		get
+		{
+			return this._order_address;
+		}
+		set
+		{
+			if ((this._order_address != value))
+			{
+				this.Onorder_addressChanging(value);
+				this.SendPropertyChanging();
+				this._order_address = value;
+				this.SendPropertyChanged("order_address");
+				this.Onorder_addressChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_order_phone", DbType="NVarChar(20)")]
+	public string order_phone
+	{
+		get
+		{
+			return this._order_phone;
+		}
+		set
+		{
+			if ((this._order_phone != value))
+			{
+				this.Onorder_phoneChanging(value);
+				this.SendPropertyChanging();
+				this._order_phone = value;
+				this.SendPropertyChanged("order_phone");
+				this.Onorder_phoneChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_order_note", DbType="NVarChar(500)")]
+	public string order_note
+	{
+		get
+		{
+			return this._order_note;
+		}
+		set
+		{
+			if ((this._order_note != value))
+			{
+				this.Onorder_noteChanging(value);
+				this.SendPropertyChanging();
+				this._order_note = value;
+				this.SendPropertyChanged("order_note");
+				this.Onorder_noteChanged();
 			}
 		}
 	}

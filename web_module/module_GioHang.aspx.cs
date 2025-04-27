@@ -149,14 +149,16 @@ public partial class web_module_module_GioHang : System.Web.UI.Page
                 db.tb_OrderDetails.InsertOnSubmit(insd);
                 db.SubmitChanges();
             }
-            Session["Cart"] = null;
-            //alert.alert_Success(Page, "Đặt hàng thành công", "");
-            ScriptManager.RegisterClientScriptBlock(Page, this.GetType(), "Alert", "swal('Đặt hàng thành công','','success').then(function(){window.location = '/trang-chu';})", true);
-            //Response.Redirect("/trang-chu");
+            Response.Redirect("/thanh-toan");
         }
         catch
         {
             alert.alert_Warning(Page, "Đặt hàng thất bại", "");
         }
+       
     }
+
+        // Chuyển sang trang thanh toán thay vì xử lý đơn hàng trực tiếp
+
+
 }
