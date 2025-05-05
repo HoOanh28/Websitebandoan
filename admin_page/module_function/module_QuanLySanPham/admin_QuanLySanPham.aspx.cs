@@ -113,8 +113,7 @@ public partial class admin_page_module_function_module_QuanLySanPham_admin_QuanL
             foreach (var item in selectedKey)
             {
                 tb_Product del = db.tb_Products.Where(x => x.pr_id == Convert.ToInt32(item)).FirstOrDefault();
-                del.pr_status = "Hết";
-           
+                db.tb_Products.DeleteOnSubmit(del);
             }
             try
             {

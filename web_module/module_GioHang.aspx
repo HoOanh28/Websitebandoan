@@ -24,10 +24,11 @@
                         <div class="c"></div>
                     </div>
                 </div>
-                <div class="c15"></div>
+                <div class="c30"></div>
                 <center>
                     <table class="table">
                         <tr>
+                            <th>Hình ảnh</th>
                             <th>Tên</th>
                             <th>Số lượng</th>
                             <th>Thành tiền</th>
@@ -38,6 +39,9 @@
                         <asp:Repeater runat="server" ID="rpGioHang">
                             <ItemTemplate>
                                 <tr>
+                                    <td>
+                                        <img src='<%# Eval("image") %>' alt="Ảnh món" style="width:40px; height:40px; object-fit:cover;" />
+                                    </td>
                                     <td><%#Eval("name") %></td>
                                     <td><%#Eval("number") %></td>
                                     <td><%#Eval("total") %></td>
@@ -52,9 +56,9 @@
                             <th colspan="4"><%=total %></th>
                         </tr>
                     </table>
-
+                      <div class="c30"></div>
                     <div <%=none %>>
-                        <a href="javascript:void(0)" id="btnSave" class="btn btn-primary" runat="server" onserverclick="btnSave_ServerClick">Đặt hàng</a>
+                        <a href="javascript:void(0)" id="btnSave" class="btn btn-primary" runat="server" onserverclick="btnSave_ServerClick">Thanh toán</a>
                     </div>
                     <br />
             </div>
@@ -64,9 +68,9 @@
         <div class="msgbox">
         </div>
     </div>
-    </form>
-        </div>
-    </div>
+   
+       
+   
     <div style="display: none">
         <input type="text" id="txtId" runat="server" name="name" value="" />
 
@@ -74,20 +78,36 @@
         <asp:LinkButton ID="btnGiam" runat="server" OnClick="btnGiam_ServerClick" CssClass="hidden"></asp:LinkButton>
         <asp:LinkButton ID="btnDel" runat="server" OnClick="btnDel_ServerClick" CssClass="hidden"></asp:LinkButton>
     </div>
-    <script>
-        function _add(id) {
-            document.getElementById("<%=txtId.ClientID%>").value = id;
+     <script>
+         function _add(id) {
+             document.getElementById("<%=txtId.ClientID%>").value = id;
             document.getElementById("<%=btnAdd.ClientID%>").click();
-        }
-        function _giam(id) {
-            document.getElementById("<%=txtId.ClientID%>").value = id;
+         }
+         function _giam(id) {
+             document.getElementById("<%=txtId.ClientID%>").value = id;
             document.getElementById("<%=btnGiam.ClientID%>").click();
         }
         function _del(id) {
             document.getElementById("<%=txtId.ClientID%>").value = id;
             document.getElementById("<%=btnDel.ClientID%>").click();
-        }
-    </script>
+         }
+        
+             function addToCart(itemId, itemName, itemPrice) {
+                 let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+                    // Kiểm tra xem món đã có trong giỏ chưa
+                    let item = cart.find(i => i.id === itemId);
+
+             if (item) {
+                 item.quantity++; // Tăng số lượng nếu đã có
+                    } else {
+                 cart.push({ id: itemId, name: itemName, price: itemPrice, quantity: 1 });
+                    }
+
+             localStorage.setItem("cart", JSON.stringify(cart));
+             updateCartUI();
+                }
+     </script>
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder6" runat="Server">
 </asp:Content>

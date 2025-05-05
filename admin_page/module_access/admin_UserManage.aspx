@@ -49,7 +49,7 @@
     </script>
     <div class="card card-block">
         <center style="font-size: 50px">
-            <p>Quản lý tài khoảng nhân viên</p>
+            <p>Quản lý tài khoản nhân viên</p>
         </center>
         <div class="form-group row">
             <div class="col-sm-10">
@@ -77,7 +77,7 @@
                 <ClientSideEvents RowDblClick="btnChiTiet" />
                 <SettingsSearchPanel Visible="true" />
                 <SettingsBehavior AllowFocusedRow="true" />
-                <SettingsText EmptyDataRow="Không có dữ liệu" SearchPanelEditorNullText="Gỏ từ cần tìm kiếm và enter..." />
+                <SettingsText EmptyDataRow="Không có dữ liệu" SearchPanelEditorNullText="Gõ từ cần tìm kiếm và enter..." />
                 <SettingsLoadingPanel Text="Đang tải..." />
                 <SettingsPager PageSize="20" Summary-Text="Trang {0} / {1} ({2} trang)"></SettingsPager>
             </dx:ASPxGridView>

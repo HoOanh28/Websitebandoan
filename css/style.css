@@ -761,7 +761,7 @@ img {
 
     
 .crumb {
-    background: #FFF;
+    
     padding: 10px 0px;
     color: #6f6f6f;
 }
@@ -1896,3 +1896,35 @@ img {
     .user-icon a {
         color: black;
     }
+.table {
+    width: 100%; /* Để bảng chiếm toàn bộ chiều rộng của vùng chứa */
+    border-collapse: collapse; /* Gộp đường viền để có giao diện sạch hơn */
+   
+}
+
+    .table th, .table td {
+        padding: 10px; /* Thêm khoảng trắng bên trong các ô bảng */
+        text-align: left; /* Căn chỉnh văn bản sang trái theo mặc định */
+      
+    }
+
+    .table th {
+        background-color: #f2f2f2; /* Nền sáng cho hàng tiêu đề */
+        font-weight: bold;
+    }
+
+    .table tr:last-child td {
+        border-bottom: none; /* Loại bỏ đường viền dưới ở hàng cuối cùng */
+    }
+
+   
+    .table tbody tr {
+        background-color: #fff; /* Nền trắng cho các hàng sản phẩm */
+        border: 1px solid #ccc; /* Đường viền xám nhạt xung quanh mỗi hàng */
+        margin-bottom: 10px; /* Thêm khoảng cách giữa các hàng sản phẩm */
+       
+        padding: 10px; /* Thêm khoảng trắng bên trong vùng có viền */
+        border-radius: 5px; /* Tùy chọn: Thêm góc bo tròn */
+        overflow: hidden; /* Để xử lý các phần tử float nếu cần */
+    }
+

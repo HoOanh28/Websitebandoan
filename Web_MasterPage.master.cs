@@ -23,7 +23,7 @@ public partial class Web_MasterPage : System.Web.UI.MasterPage
             }
         }
         Menu();
-        HeThong();
+       
 
         // Load số lượng giỏ hàng
         if (Session["Cart"] != null)
@@ -39,11 +39,7 @@ public partial class Web_MasterPage : System.Web.UI.MasterPage
         rpMenu.DataBind();
     }
 
-    protected void HeThong()
-    {
-        rpHeThong.DataSource = from ht in db.tb_Restaurants select ht;
-        rpHeThong.DataBind();
-    }
+    
 
     public void AddToCart(int productId, string productName, decimal price)
     {
@@ -135,3 +131,4 @@ public partial class Web_MasterPage : System.Web.UI.MasterPage
         Response.Redirect("/login");
     }
 }
+

@@ -8,23 +8,28 @@
         .form-login {
             display: grid;
             justify-items: center;
+           
         }
 
             .form-login h3 {
                 font-size: 30px;
-                font-weight: 400;
+                font-weight: 450;
+                font-family: 'Playfair Display', serif;
             }
 
-            .form-login p {
-                font-size: larger;
-            }
 
         .form-input {
-            width: 30%;
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px; /* Bo góc nhẹ -> nếu bạn muốn vuông hơn, chỉnh thành 4px hoặc 0 */
+            box-shadow: 0 12px 24px rgba(0,0,0,0.25); /* Đây là bóng nhẹ */
         }
 
         .input-dangnhap {
-            width: 30%;
+            width: 100%;
             text-align: center;
             background: #cd6420;
             padding: 7px;
@@ -68,25 +73,24 @@
 <asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder5" runat="Server">
     <br />
     <br />
-    <br />
+
     <div class="form-login">
-        <h3 class="text-center">ĐĂNG NHẬP TÀI KHOẢN</h3>
+        <h3 class="text-center">Đăng nhập </h3>
         <p class="text-center">Bạn chưa có tài khoản? <a href="/dang-ky">Đăng ký tại đây</a></p>
+        <br />
         <div class="form-input">
             <label>Tên đăng nhập <span style="color: orangered">*</span></label>
             <input type="email" id="txtTen" runat="server" name="email" value="" placeholder="Tên đăng nhập">
-        </div>
-        <br />
-        <div class="form-input">
             <label>Mật khẩu <span style="color: orangered">*</span></label>
             <input type="password" id="txtPass" runat="server" name="password" value="" placeholder="Password">
-        </div>
-        <br />
+       </div>
+    <br />
         <a href="#" class="btn btn-primary" runat="server" id="btnLogin" onserverclick="btnLogin_ServerClick">Đăng nhập</a>
-        <br />
-        <br />
-        <br />
+
     </div>
+    <br />
+    <br />
+
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder6" runat="Server">
 </asp:Content>

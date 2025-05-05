@@ -49,7 +49,7 @@
         }
         function confirmDel() {
             swal("Bạn có thực sự muốn xóa?",
-                "Nếu xóa, dữ liệu sẽ không thể khôi phục.",
+                "Nếu xóa, sản phẩm sẽ bị xóa hoàn toàn khỏi hệ thống và không thể khôi phục.",
                 "warning",
                 {
                     buttons: true,

@@ -188,6 +188,9 @@
                             <li class="nav-item pading">
                                 <a class="nav-link active" href="uu-dai">Ưu đãi</a>
                             </li>
+                             <li class="nav-item pading">
+                                <a class="nav-link active" href="lien-he">Liên hệ</a>
+                            </li>
                             <li class="nav-item pading">
                                 <a class="nav-link active" href="dat-ban">Đặt bàn</a>
                             </li>
@@ -249,47 +252,6 @@
             </asp:ContentPlaceHolder>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder7" runat="server">
             </asp:ContentPlaceHolder>
-
-
-            <div class="box-ht-cuahang ">
-                <div class="grid">
-                    <div class="flex-container flex-center" style="">
-
-                        <div class="cell-list-map mobile-cell-1-1 tab-cell-1-1" style="background: #FFF">
-                            <div class="title-list-map">
-                                <div class="title-map-text">Hệ thống nhà hàng</div>
-                                <div class="flex-container">
-                                </div>
-                            </div>
-                            <div class="box-list-map">
-                                <asp:Repeater runat="server" ID="rpHeThong">
-                                    <ItemTemplate>
-                                        <div class="item-map" data-id="16">
-                                            <div class="name"><%#Eval("re_name") %></div>
-                                            <table width="100%" border="0" cellspacing="0" cellpadding="5">
-                                                <tbody>
-                                                    <tr>
-                                                        <td width="15px"><i class="fa fa-map-marker" aria-hidden="true"></i></td>
-                                                        <td><%#Eval("re_address") %></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><i class="fa fa-phone" aria-hidden="true"></i></td>
-                                                        <td>Hotline: <%#Eval("phone") %></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><i class="fa fa-envelope" aria-hidden="true"></i></td>
-                                                        <td><%#Eval("email") %></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </ItemTemplate>
-                                </asp:Repeater>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <div class="footer" style="width: 100%; overflow: hidden">
                 <div class="c30"></div>
@@ -400,22 +362,31 @@
                 var dropdownMenu = document.querySelector('.dropdown-menu');
 
                 if (dropdownToggle) {
-                    // Create a Bootstrap dropdown instance manually
-                    var dropdown = new bootstrap.Dropdown(dropdownToggle);
-
-                    // Add click handler to ensure dropdown opens on first click
+                    // Thêm class show cho dropdown menu khi click
                     dropdownToggle.addEventListener('click', function (e) {
                         e.preventDefault();
-                        if (dropdownMenu.classList.contains('show')) {
-                            dropdown.hide();
-                        } else {
-                            dropdown.show();
+                        dropdownMenu.classList.add('show');
+                    });
+
+                    // Đóng dropdown khi click ra ngoài
+                    document.addEventListener('click', function (e) {
+                        if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                            dropdownMenu.classList.remove('show');
                         }
+                    });
+
+                    // Giữ dropdown menu hiển thị khi hover
+                    dropdownMenu.addEventListener('mouseenter', function () {
+                        dropdownMenu.classList.add('show');
+                    });
+
+                    dropdownMenu.addEventListener('mouseleave', function () {
+                        dropdownMenu.classList.remove('show');
                     });
                 }
             });
         </script>
-    </form>
+        </form>
 </body>
 </html>
    

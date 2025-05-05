@@ -89,6 +89,9 @@
                 <div class="carousel-item " data-bs-interval="5000">
                     <img src="images/banner/bun%20hue.jpg" class="d-block w-100" alt="...">
                 </div>
+                <div class="carousel-item " data-bs-interval="5000">
+                    <img src="images/banner/banh%20hue.jpg" class="d-block w-100" alt="...">
+                </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -99,7 +102,66 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
+       <div class="grid grid-box-menu-home" style="">
+	<div class="box-menu-home">
+    	<div align="center" class="hide-on-mobile hide-on-pad hide-on-tab">Hãy cũng khám phá thực đơn tại nhà hàng Nét Huế để được thưởng thức trọn hương vị ẩm thực Huế</div>
+		<div class="c20 hide-on-mobile hide-on-tab hide-on-pad"></div>
+    	<div class="swiper-container swiper-container-initialized swiper-container-horizontal" id="menuhome">
+    		<div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-1177.2px, 0px, 0px);"><div class="swiper-slide swiper-slide-duplicate" style="text-align: center; width: 166.2px; margin-right: 30px;" data-swiper-slide-index="6"> 
+                	<div style="max-width:115px; margin:0 auto">
+	                	<div class="image-menu-home"><a href="/goi-rau/">
+                            <img src="uploadimages/20122023_042801_CH_-uploaded-san%20pham_banh%20ram_cr_521x521.jpg"  width="100%" alt="Gỏi rau"></a></div>
+                    </div>
+                    <div class="c40"></div>
+                    <div class="menu-name"><a href="/goi-rau/">Gỏi rau</a></div>
+                </div><div class="swiper-slide swiper-slide-duplicate" style="text-align: center; width: 166.2px; margin-right: 30px;" data-swiper-slide-index="7"> 
+                	<div style="max-width:115px; margin:0 auto">
+	                	<div class="image-menu-home"><a href="/mon-an-choi/"><img src="/temp/-uploaded-san pham_IMG_6605_cr_200x200.jpg" width="100%" alt="Món ăn chơi"></a></div>
+                    </div>
+                    <div class="c10"></div>
+                    <div class="menu-name"><a href="/mon-an-choi/">Món ăn chơi</a></div>
+                </div><div class="swiper-slide swiper-slide-duplicate" style="text-align: center; width: 166.2px; margin-right: 30px;" data-swiper-slide-index="8"> 
+                	<div style="max-width:115px; margin:0 auto">
+	                	<div class="image-menu-home"><a href="/lau/">
+                            <img src="uploadimages/20122023_042910_CH_-uploaded-_thumbs-Hue%20cake_nam%20cake_cr_521x521.png" /></a></div>
+                    </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+     </div>
 
+    
+                    
+        <script>
+            $(function () {
+                var swiper_slide_home = new Swiper('#menuhome', {
+                    loop: true,
+                    slidesPerView: 5,
+                    autoplay: {
+                        delay: 4500,
+                    },
+
+                    speed: 1000,
+                    spaceBetween: 30,
+                    navigation: {
+                        nextEl: '.homeslide-next',
+                        prevEl: '.homeslide-prev',
+                    },
+                    breakpoints: {
+                        640: {
+                            slidesPerView: 4,
+                            spaceBetween: 30
+                        },
+                        767: {
+                            slidesPerView: 4,
+                            spaceBetween: 20
+                        },
+                    }
+
+                });
+            });
+        </script>     
         <div class="grid">
             <div class="c40 hide-on-mobile hide-on-pad hide-on-tab"></div>
             <h2 class="title-home"><a href="#">Món ăn nổi bật</a></h2>
@@ -164,6 +226,7 @@
                             <a href="phong-phu-khau-vi">
                                 <img src="../images/banner/phuhopkhauvi.jpg" alt="Phong Phú Khẩu Vị Riêng Của Người Huế " class="image-news" width="100%"></a>
                         </div>
+                          <div class="c15"></div>
                         <h3 class="news-name"><a href="phong-phu-khau-vi">Phong Phú Khẩu Vị Riêng Của Người Huế </a></h3>
 
                     </div>
@@ -172,6 +235,7 @@
                             <a href="khai-xuan">
                                 <img src="../images/Tet-2023/khai-xuan.jpg" alt="Nét Huế Khai Xuân Phục Vụ Tại Chỗ Cả Hệ Thống" class="image-news" width="100%"></a>
                         </div>
+                          <div class="c15"></div>
                         <h3 class="news-name"><a href="khai-xuan">Nét Huế Khai Xuân Phục Vụ Tại Chỗ Cả Hệ Thống</a></h3>
                         <div>&nbsp;</div>
                     </div>
@@ -180,6 +244,7 @@
                             <a href="thong-bao">
                                 <img src="images/ban-thong-tet.png" alt="Nét Huế Bán Thông Tết 2025" class="image-news" width="100%"></a>
                         </div>
+                          <div class="c15"></div>
                         <h3 class="news-name"><a href="thong-bao">Nét Huế Bán Thông Tết 2025</a></h3>
                         <div>&nbsp;</div>
                     </div>

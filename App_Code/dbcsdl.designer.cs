@@ -53,6 +53,9 @@ public partial class dbcsdlDataContext : System.Data.Linq.DataContext
   partial void Insertadmin_User(admin_User instance);
   partial void Updateadmin_User(admin_User instance);
   partial void Deleteadmin_User(admin_User instance);
+  partial void InsertContact(Contact instance);
+  partial void UpdateContact(Contact instance);
+  partial void DeleteContact(Contact instance);
   partial void Inserttb_Book(tb_Book instance);
   partial void Updatetb_Book(tb_Book instance);
   partial void Deletetb_Book(tb_Book instance);
@@ -170,6 +173,14 @@ public partial class dbcsdlDataContext : System.Data.Linq.DataContext
 		get
 		{
 			return this.GetTable<admin_User>();
+		}
+	}
+	
+	public System.Data.Linq.Table<Contact> Contacts
+	{
+		get
+		{
+			return this.GetTable<Contact>();
 		}
 	}
 	
@@ -1687,6 +1698,212 @@ public partial class admin_User : INotifyPropertyChanging, INotifyPropertyChange
 				this._groupuser_id = value;
 				this.SendPropertyChanged("groupuser_id");
 				this.Ongroupuser_idChanged();
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Contact")]
+public partial class Contact : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _ID;
+	
+	private string _YourName;
+	
+	private string _Phone;
+	
+	private string _Email;
+	
+	private string _Subject;
+	
+	private string _OtherRequest;
+	
+	private System.Nullable<System.DateTime> _CreateDate;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnYourNameChanging(string value);
+    partial void OnYourNameChanged();
+    partial void OnPhoneChanging(string value);
+    partial void OnPhoneChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
+    partial void OnSubjectChanging(string value);
+    partial void OnSubjectChanged();
+    partial void OnOtherRequestChanging(string value);
+    partial void OnOtherRequestChanged();
+    partial void OnCreateDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreateDateChanged();
+    #endregion
+	
+	public Contact()
+	{
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int ID
+	{
+		get
+		{
+			return this._ID;
+		}
+		set
+		{
+			if ((this._ID != value))
+			{
+				this.OnIDChanging(value);
+				this.SendPropertyChanging();
+				this._ID = value;
+				this.SendPropertyChanged("ID");
+				this.OnIDChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_YourName", DbType="NVarChar(250)")]
+	public string YourName
+	{
+		get
+		{
+			return this._YourName;
+		}
+		set
+		{
+			if ((this._YourName != value))
+			{
+				this.OnYourNameChanging(value);
+				this.SendPropertyChanging();
+				this._YourName = value;
+				this.SendPropertyChanged("YourName");
+				this.OnYourNameChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="NVarChar(50)")]
+	public string Phone
+	{
+		get
+		{
+			return this._Phone;
+		}
+		set
+		{
+			if ((this._Phone != value))
+			{
+				this.OnPhoneChanging(value);
+				this.SendPropertyChanging();
+				this._Phone = value;
+				this.SendPropertyChanged("Phone");
+				this.OnPhoneChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(250)")]
+	public string Email
+	{
+		get
+		{
+			return this._Email;
+		}
+		set
+		{
+			if ((this._Email != value))
+			{
+				this.OnEmailChanging(value);
+				this.SendPropertyChanging();
+				this._Email = value;
+				this.SendPropertyChanged("Email");
+				this.OnEmailChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Subject", DbType="NVarChar(250)")]
+	public string Subject
+	{
+		get
+		{
+			return this._Subject;
+		}
+		set
+		{
+			if ((this._Subject != value))
+			{
+				this.OnSubjectChanging(value);
+				this.SendPropertyChanging();
+				this._Subject = value;
+				this.SendPropertyChanged("Subject");
+				this.OnSubjectChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OtherRequest", DbType="NVarChar(MAX)")]
+	public string OtherRequest
+	{
+		get
+		{
+			return this._OtherRequest;
+		}
+		set
+		{
+			if ((this._OtherRequest != value))
+			{
+				this.OnOtherRequestChanging(value);
+				this.SendPropertyChanging();
+				this._OtherRequest = value;
+				this.SendPropertyChanged("OtherRequest");
+				this.OnOtherRequestChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="DateTime")]
+	public System.Nullable<System.DateTime> CreateDate
+	{
+		get
+		{
+			return this._CreateDate;
+		}
+		set
+		{
+			if ((this._CreateDate != value))
+			{
+				this.OnCreateDateChanging(value);
+				this.SendPropertyChanging();
+				this._CreateDate = value;
+				this.SendPropertyChanged("CreateDate");
+				this.OnCreateDateChanged();
 			}
 		}
 	}
