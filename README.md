@@ -34,7 +34,7 @@ Quản trị viên
 Tài khoản: root (admin)
 Mật khẩu: 12345
 Sinh viên thực hiện
-Họ và tên: Hồ Thị Oanh
+Họ và tên: Hồ Thị Oanh  21CNTT1
+           Đỗ Thị Quỳnh Nhi 21CNTT2
 GVHD: Phạm Anh Phương
-MSV: 3120221073
-Lớp: 21CNTT1 - Đại học Sư Phạm Đà Nẵng
+Trường Đại học Sư Phạm Đà Nẵng
